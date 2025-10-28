@@ -1,0 +1,31 @@
+---
+import '../../styles/tailwind.css';
+
+import Footer from "../Footer/Footer.astro";
+import Navbar from "../Navbar/Navbar.astro";
+
+const { title } = Astro.props as { title: string };
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title ? `${title} |` : ''} Code, Deploy, Monitor - Nurimansyah Rifwan</title>
+</head>
+<body>
+  
+  <main class="flex flex-col min-h-screen">
+    <Navbar />
+
+    <slot />
+
+    <Footer />
+  </main>
+</body>
+
+  <!-- Preline UI -->
+  <script is:inline src="./node_modules/preline/dist/index.js"></script>
+</html>
